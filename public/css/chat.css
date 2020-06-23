@@ -1,0 +1,162 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
+ }
+
+ .chat {
+  /* display: flex;
+  margin:auto 10%; */
+  display: flex;
+  margin:auto 10%;
+  border: 2px solid #dcdcdc;  
+  border-radius: 5px;
+  height: 100vh;
+}
+
+.chat__sidebar {
+  /* height: 100vh; */
+  color:#808080;
+  background:white;
+  /* width: 225px; */
+  overflow-y: scroll
+}
+
+/* Chat styles */
+
+.chat__main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  float: left;
+  width: 60%;
+}
+.username_heading{
+  background-color: #eee;
+  padding: 10px;
+}
+
+.chat__messages {
+  flex-grow: 1;
+  padding: 24px 24px 0 24px;
+  overflow-y: scroll;  
+}
+/* Message Styles */
+
+.message {
+  margin-bottom: 10px;   
+  word-wrap: break-word;
+  background:white;
+  font-size: 14px;
+  padding: 2px 5px;
+  border-radius: 0.25em;
+  border: 1px solid #d3d3d3;  
+  margin-left: 26px;
+}
+.incoming_msg_img{  
+  height: 20px;
+  width: 20px;  
+  text-align: center;
+  background-color: #5bc0de;
+  border-radius: 50%;
+  color: white;  
+  float: left;
+}
+.received_msg {
+  display: inline-block;
+  vertical-align: top;  
+  width: 56%;
+ }
+
+ .sent_msg p {
+  background: #05728f none repeat scroll 0 0;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0; color:#fff;
+  padding: 5px 10px 5px 12px;
+  width:100%;
+}
+.outgoing_msg{ overflow:hidden;}
+.sent_msg {
+  float: right;
+  width: 46%;
+}
+
+.user__name{
+  color: #05728f; 
+  margin-right: 8px;
+  font-weight: bold;
+}
+.message__name { 
+  margin-right:8px;
+}
+
+.message__meta {
+  color: #a8aab1;
+  float: right;
+  font-size: 14px;
+}
+
+.message a {
+  color: #0070CC;
+  font-size: 14px;
+}
+
+/* Message Composition Styles */
+
+.compose {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 16px;
+  padding: 24px; 
+}
+
+.compose form {
+  display: flex;
+  flex-grow: 1;
+  margin-right: 16px;
+}
+
+.compose input {
+  border: 1px solid #eeeeee;
+  width: 100%;
+  padding: 12px;
+  margin: 0 16px 0 0;
+  flex-grow: 1;
+  border-radius: 0.25em;
+}
+
+.compose button {
+  font-size: 14px;
+  color: #fff;
+  background-color: #5bc0de; 
+  border-radius: 0.25em;
+  border: 1px solid #46b8da;
+}
+
+/* Chat Sidebar Styles */
+
+.room-title {
+  font-weight: 400;
+  font-size: 22px;
+  background: #2c2f3a;
+}
+.chat__sidebar h4{
+  color:#46b8da;
+  padding: 0px 24px 15px 24px;
+  border-bottom: 1px solid #d3d3d3;
+}
+.list-title {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 4px;
+  padding: 12px 24px 0 24px;
+ 
+}
+
+.users {
+  list-style-type: disc;
+  font-weight: 300;
+  padding: 0px 24px 15px 24px;
+  border-bottom: 1px solid #d3d3d3;
+}
