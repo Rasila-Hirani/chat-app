@@ -36,7 +36,10 @@ io.on('connection',(socket)=>{
         callback()
     })
     //List of available rooms
-    socket.emit('roomList',getAllRoom())
+    socket.on('roomListQuery',() =>{
+        socket.emit('roomList',getAllRoom())
+    })
+   
   
     
     socket.on('SendMessage',(message, callback)=>{    
