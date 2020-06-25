@@ -1,16 +1,21 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
- 
+  
  }
-
+ 
  .chat {
   /* display: flex;
   margin:auto 10%; */
   display: flex;
+  /* margin:auto 10%; */
+  border: 1px solid #dcdcdc;  
+ 
+ height: 100vh;
+  /* height: 100vh; */
+  border-radius: 8px;
+  justify-content: center;
   margin:auto 10%;
-  border: 2px solid #dcdcdc;  
-  border-radius: 5px;
-  height: 100vh;
+  
 }
 
 .chat__sidebar {
@@ -18,7 +23,13 @@ body {
   color:#808080;
   background:white;
   /* width: 225px; */
-  overflow-y: scroll
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 250px;
+  border-right:  1px solid #dcdcdc;  
+
+
 }
 
 /* Chat styles */
@@ -27,7 +38,7 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  max-height: 100vh;
+  /* max-height: 100vh; */
   float: left;
   width: 60%;
 }
@@ -57,7 +68,7 @@ body {
   height: 20px;
   width: 20px;  
   text-align: center;
-  background-color: #5bc0de;
+  background-color: #4facfe;
   border-radius: 50%;
   color: white;  
   float: left;
@@ -79,7 +90,7 @@ body {
 .outgoing_msg{ overflow:hidden;}
 .sent_msg {
   float: right;
-  width: 46%;
+  width: 60%;
 }
 
 .user__name{
@@ -94,7 +105,7 @@ body {
 .message__meta {
   color: #a8aab1;
   float: right;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .message a {
@@ -118,7 +129,7 @@ body {
 }
 
 .compose input {
-  border: 1px solid #eeeeee;
+  border: 1px solid #d3d3d3;
   width: 100%;
   padding: 12px;
   margin: 0 16px 0 0;
@@ -129,7 +140,7 @@ body {
 .compose button {
   font-size: 14px;
   color: #fff;
-  background-color: #5bc0de; 
+  background-color: #4facfe; 
   border-radius: 0.25em;
   border: 1px solid #46b8da;
 }

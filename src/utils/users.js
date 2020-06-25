@@ -1,7 +1,7 @@
 const users = []
 
 // addUser
-const addUser = ({id, username, room })=>{
+const addUser = ({id, username, room })=>{    
     //Validata Data
     if(!username || !room){
         return {
@@ -24,8 +24,8 @@ const addUser = ({id, username, room })=>{
         }
     }
     //Store user    
-    const user = {id,username,room}    
-    users.push(user)   
+    const user = {id,username,room}  
+    users.push(user)       
     return {user}
 }
 //remove User
@@ -48,7 +48,7 @@ const getUsersInRoom = (room) =>{
     room =room.trim().toLowerCase()     
   return users.filter((user) => user.room === room)
 }
-const getAlluser =() => users
+const getAlluser =() =>{return users}
 
 module.exports ={
     addUser,

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Join | ChatApp</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
         <link href="/css/style.css" rel="stylesheet" type="text/css">    
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">    
+          
     </head>
-    <body class="centered-form">
-        
+    <body>
+        <div class="centered-form">
         <div class="centered-form__box">
             <h3>Join a Chat</h3>
             <form action="/chat.html" id="joinForm">
@@ -16,20 +19,21 @@
                 <label>Create Room</label>
                 <input type="text" name="createRoom" class="input-txt" placeholder="Room Name"  autocomplete="off"/> 
                 <label>OR</label>
-                <select class="input-txt" id="room-select" name="joinRoom">
+                <select class="input-txt" id="rooms" name="joinRoom">
                     <option value="">Select an existing room:</option>
-                </select>
-               
+                </select>               
                 <button class="join-btn" type="submit">Join</button>
-            </form>
-            <script id="room-template" type="text/html">
-                <div>
-                   {{#rooms}} <option value="{{.}}">{{.}}</option>  {{/rooms}}     
-                </div>
-            </script>            
+            </form>                      
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>       
-        <script src="/socket.io/socket.io.js"></script>
-         <script src="/js/login.js"></script>
+    </div>
+        <script id="room-template" type="text/html">
+            <div>
+               {{#rooms}} <option value="{{.}}">{{.}}</option>  {{/rooms}}     
+            </div>
+        </script> 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>    
+    <script src="/socket.io/socket.io.js"></script>
+     <script src="/js/login.js"></script>
     </body>
 </html>

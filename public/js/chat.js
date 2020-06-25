@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io()
 
 //Elements
 const $messageForm = document.querySelector('#message-form')
@@ -35,13 +35,7 @@ const roomCheck =() =>{
     return roomname
 }
 const room =roomCheck()
-socket.emit('join',{username,room},(error)=>{
-    if(error){       
-        alert(error)   
-        location.href ='/'    
-    }
-   
-}) 
+
 const autoScroll =() =>{
     //New message element
     const $newMessage = $msgDIV.lastElementChild
@@ -67,16 +61,15 @@ const autoScroll =() =>{
 }
 
 socket.on('message',(msg)=>{    
-    
-    if(socket.id === msg.id){
-        const html = Mustache.render(OutgoingMessageTemplate,{           
+       if(socket.id === msg.id){
+            const html = Mustache.render(OutgoingMessageTemplate,{           
             username:msg.username,
             message:msg.text,
             createdAt:moment(msg.createdAt).format('h:mm A')
         })
         $messageBox.insertAdjacentHTML('beforeend',html)                
     }
-    else{
+    else{      
         const html = Mustache.render(messageTemplate,{ 
             name_letter:msg.username.charAt(0).toUpperCase(),
             username:msg.username,
@@ -120,7 +113,7 @@ socket.on('roomData',({room,users})=>{
   $userList.innerHTML=""
   $userList.insertAdjacentHTML("beforeend",html)
 })
-
+ 
 
 $messageForm.addEventListener('submit',(e)=>{
     e.preventDefault(); 
@@ -156,5 +149,11 @@ $sendLocationButton.addEventListener('click',() =>{
 })
 
 
-
-
+// while joinin the chat
+socket.emit('joinRoom', { username, room }, (error) => {
+    console.log('chat page :-',socket.id)
+    if(error){
+        alert(error)
+        location.href = '/'
+    }
+})
