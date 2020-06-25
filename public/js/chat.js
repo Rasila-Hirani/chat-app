@@ -150,8 +150,8 @@ $sendLocationButton.addEventListener('click',() =>{
 
 
 // while joinin the chat
-socket.emit('joinRoom', { username, room }, (error) => {
-    console.log('chat page :-',socket.id)
+socket.emit('join', { username, room }, (error) => {
+   
     if(error){
         alert(error)
         location.href = '/'
